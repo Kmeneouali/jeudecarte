@@ -5,12 +5,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-import lombok.Getter;
-
-@Getter
 public class Paquet {
 
 	private List<Carte> cartes = new ArrayList<Carte>(52);
+
+	public List<Carte> getCartes() {
+		return cartes;
+	}
 
 	public void initialiserPaquet() {
 		Stream.of(Constants.COULEURS).forEach(

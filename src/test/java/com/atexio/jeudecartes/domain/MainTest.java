@@ -8,21 +8,26 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PaquetTest {
-	Paquet paquet = new Paquet();
+public class MainTest {
+	Paquet paquet;
+	Main main;
 
 	@Before
 	public void setUp() throws Exception {
+		paquet = new Paquet();
+		paquet.initialiserPaquet();
+		main = new Main();
 
 	}
 
 	@Test
-	public void test_initialiser_paquet() {
-		Paquet paquet = new Paquet();
-		paquet.initialiserPaquet();
-		List<Carte> cartes = paquet.getCartes();
-		assertNotNull(paquet.getCartes());
-		assertEquals(52, cartes.size());
+	public void testInitialiserMain() {
+		main.initialiserMain(paquet);
+
+		List<Carte> cartes = main.getCartes();
+
+		assertNotNull(cartes);
+		assertEquals(10, cartes.size());
 		cartes.forEach(carte -> {
 			assertNotNull(carte);
 			assertNotNull(carte.getValeur());
