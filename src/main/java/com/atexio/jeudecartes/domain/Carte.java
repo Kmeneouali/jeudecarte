@@ -10,32 +10,31 @@ public class Carte {
 	private String couleur;
 	private int valeur;
 
-	@Override
-	public String toString() {
+	public String AfficherCarte() {
 		return "Carte [couleur=" + couleur + ", valeur=" + getTextRepresentationOfCard(valeur) + "]";
 	}
 
 	String getTextRepresentationOfCard(int valeur) {
 
-		String s = "";
+		String valeurString = "";
 		switch (valeur) {
 		case 1:
-			s = "AS";
+			valeurString = "AS";
 			break;
 		case 11:
-			s = "Valet";
+			valeurString = "Valet";
 			break;
 		case 12:
-			s = "Dame";
+			valeurString = "Dame";
 			break;
 		case 13:
-			s = "Roi";
+			valeurString = "Roi";
 			break;
 		default:
-			s += valeur;
+			valeurString += valeur;
 			break;
 		}
-		return s;
+		return valeurString;
 	}
 
 }

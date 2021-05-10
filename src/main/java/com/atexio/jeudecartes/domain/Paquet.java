@@ -17,6 +17,10 @@ public class Paquet {
 				couleur -> Stream.of(Constants.VALEURS).forEach(valeur -> this.cartes.add(new Carte(couleur, valeur))));
 		// mélanger le paquet
 		Collections.shuffle(this.cartes);
+
+	}
+
+	public void afficherPaquet() {
 		// afficher le paquet
 		this.cartes.stream().forEach(c -> System.out.println(c.toString()));
 	}

@@ -19,7 +19,7 @@ public class Main {
 	}
 
 	public void afficherMain() {
-		this.cartes.stream().forEach(c -> System.out.println(c.toString()));
+		this.cartes.stream().forEach(c -> System.out.println(c.AfficherCarte()));
 	}
 
 }
